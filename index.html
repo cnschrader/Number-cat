@@ -5,19 +5,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Cat Game</title>
-              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="assets/css/reset.css">
+              
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+              <link rel="stylesheet" href="assets/css/style.css">
               
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Cat Game!</h1>
-      <h2>Number to Guess: <span id="numberToGuess"></span></h2>
+    <!-- <h1>Cat Game!</h1>
+      <h2>Number to Guess: <span id="numberToGuess"></span></h2> -->
 
-      <div id="catNumberOne"></div>
-      <div id="catNumberTwo"></div>
-      <div id="catNumberThree"></div>
-      <div id="catNumberFour"></div>
 
+      <!-- Game title -->
+      <div class="jumbotron">
+        <h1 class="display-4">Cat Game</h1>
+      </div>
+
+   <!-- images that will have number values when clicked -->
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3">
+            <img src="assets/images/cat-1.jpg" id="catNumberOne" alt="cat one">
+          </div>
+          <div class="col-md-3">
+            <img src="assets/images/cat-2.jpg" id="catNumberTwo" alt="cat two">
+          </div>
+          <div class="col-md-3">
+            <img src="assets/images/cat-3.jpg" id="catNumberThree" alt="cat three">
+          </div>
+          <div class="col-md-3">
+            <img src="assets/images/cat-4.jpg" id="catNumberFour" alt="cat four">
+          </div>
+      </div>
+    </div>
+
+
+    <!-- area where score will be added together -->
+    <div id="playerscoreArea"></div>
+    <div id="winCounter"></div>
+    <div id="lossCounter"></div>
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+
+     
 
 
     <script src="assets/javascript/game.js"></script>
