@@ -1,7 +1,7 @@
 // Creat variables for the counters. Wins, Losses, etc. 
-var wins = 0;
-var losses = 0;
+
 var counter = 0;
+var score = 0;
 
 var catNumberOne = $("#catNumberOne");
 var catNumberTwo = $("#catNumberTwo");
@@ -41,6 +41,7 @@ function reset(){
  catNumberFour.data('myval', Math.floor(Math.random() * 12) + 1);
  console.log(catNumberOne.data('myval'));
  realNumber();
+ score = 0;
 
 };
 
@@ -63,20 +64,31 @@ function range(start, end) {
     
 
   
-var score = 0;
-  
+
+var wins = 1;
+var losses = 1;
 $(".catClick").on("click", function(){
     
     score+=$(this).data("myval");
     
     if(score === numberGoal){
-        wins++
+        
         alert("Meow! You Won!");
+        winCounter.text(wins);
+        wins++
+        reset();
+        console.log(wins);
+        
     }
     
     else if(score > numberGoal){
-        losses++
         alert("you lose!");
+        lossCounter.text(losses);
+        losses++
+        reset();
+        console.log(losses);
+        
+        
     };
     
     playerScoreArea.text(score);
