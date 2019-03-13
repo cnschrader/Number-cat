@@ -1,6 +1,7 @@
 // Creat variables for the counters. Wins, Losses, etc. 
 var wins = 0;
 var losses = 0;
+var counter = 0;
 
 var catNumberOne = $("#catNumberOne");
 var catNumberTwo = $("#catNumberTwo");
@@ -13,29 +14,107 @@ var lossCounter = $("#lossCounter");
 
 // Make an array for the number values of the crystals (1 - 19).
 
-var catChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+
 
 // look up how to make an array work without having to type a bunch of numbers
-var numberToMatch = [120];
+
 
 
 // Make a loop for the value given. Maybe inside the loop create the image tags, attach appropriate classes and ids, then append to the already exisiting div that has an id (think jquery for this.) .attr .data .append var -variable name- = $("<img>").
 
+// var catNumberChoices;
+ 
+
+var catChoicesArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]; 
+
 var catNumberChoices;
 
-function catNumber(){
- catNumberChoices = catChoices[Math.floor(Math.random() * catChoices.length)];
- console.log(catNumber);
+
+
+function reset(){
+// catNumberChoices = catChoicesArray[Math.floor(Math.random() * catChoicesArray.length)];
+//  catNumberOne = Math.floor(Math.random() * 12) + 1; 
+ catNumberOne.data('myval', Math.floor(Math.random() * 12) + 1);
+ catNumberTwo.data('myval', Math.floor(Math.random() * 12) + 1);
+ catNumberThree.data('myval', Math.floor(Math.random() * 12) + 1);
+ catNumberFour.data('myval', Math.floor(Math.random() * 12) + 1);
+ console.log(catNumberOne.data('myval'));
+
 };
 
+function range(start, end) {
+    return Array(end - start + 1).fill().map((_, idx) => start + idx)
+  }
+  var result = range(19, 120); 
+  console.log(result);
 
-  function matchNumber(){
-    for(var i = 0; i <= 120; i++){
-        var currrentNumber = i;
-    }
 
+  reset();
+ 
+  realNumber();
+  
+  var numberGoal;
+  function realNumber(){
+    numberGoal = result[Math.floor(Math.random() * result.length)];
+    console.log(numberGoal);
 };
+    
 
+  for(var i = 0; i < result; i++){
+
+
+  };
+
+  $(".catClick").on("click", function(){
+     playerScoreArea.text($(this).data("myval"));
+
+    
+    });
+
+  
+
+
+
+// var N = 120;
+// Array.apply(null, {length: N}).map(Number.call, Number);
+
+// var numberGoal = N[Math.floor(Math.random() * N.length)];
+
+// var numberGoal;
+// var numberToMatchArray = [];
+// function matchNumber(num){
+//     for(var i = 0; i <= 120; i++){
+//       (numberToMatchArray.push(num));
+//       console.log(numberToMatchArray);
+    
+    
+    
+//     }
+
+//   
+//       console.log(numberGoal);
+      
+
+
+
+
+
+//   function matchNumber(num){
+//     for(var i = 0; i <= 120; i++){
+//         console.log(numberToMatchArray.push(num));
+//     }
+
+// };
+
+// $("#catNumberOne").on("click", function(){
+    
+//  scoreTotal = "";
+
+
+
+
+
+// });
 
 // Make a reset funciton
 
