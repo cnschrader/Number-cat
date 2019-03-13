@@ -10,6 +10,7 @@ var catNumberFour = $("#catNumberFour");
 var playerScoreArea = $("#playerScoreArea");
 var winCounter = $("#winCounter");
 var lossCounter = $("#lossCounter");
+var goalArea = $("#goalArea");
 
 
 // Make an array for the number values of the crystals (1 - 19).
@@ -39,6 +40,7 @@ function reset(){
  catNumberThree.data('myval', Math.floor(Math.random() * 12) + 1);
  catNumberFour.data('myval', Math.floor(Math.random() * 12) + 1);
  console.log(catNumberOne.data('myval'));
+ realNumber();
 
 };
 
@@ -60,13 +62,28 @@ function range(start, end) {
 };
     
 
-  for(var i = 0; i < result; i++){
+  
+var score = 0;
+  
+$(".catClick").on("click", function(){
+    
+    score+=$(this).data("myval");
+    
+    if(score === numberGoal){
+        wins++
+        alert("Meow! You Won!");
+    }
+    
+    else if(score > numberGoal){
+        losses++
+        alert("you lose!");
+    };
+    
+    playerScoreArea.text(score);
+     console.log(numberGoal);
 
+     goalArea.text(numberGoal);
 
-  };
-
-  $(".catClick").on("click", function(){
-     playerScoreArea.text($(this).data("myval"));
 
     
     });
@@ -75,8 +92,7 @@ function range(start, end) {
 
 
 
-// var N = 120;
-// Array.apply(null, {length: N}).map(Number.call, Number);
+
 
 // var numberGoal = N[Math.floor(Math.random() * N.length)];
 
@@ -92,7 +108,7 @@ function range(start, end) {
 //     }
 
 //   
-//       console.log(numberGoal);
+// 
       
 
 
@@ -106,9 +122,7 @@ function range(start, end) {
 
 // };
 
-// $("#catNumberOne").on("click", function(){
-    
-//  scoreTotal = "";
+// 
 
 
 
